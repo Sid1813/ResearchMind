@@ -464,25 +464,6 @@ This project demonstrates practical experience with:
 
 ---
 
-# 🔮 Future Improvements
-
-Potential future extensions include:
-
-- [ ] Persistent research memory
-- [ ] Citation quality scoring
-- [ ] Source credibility ranking
-- [ ] Research history and saved reports
-- [ ] Streaming agent responses
-- [ ] Per-agent progress tracking
-- [ ] Parallel research execution with higher API limits
-- [ ] Uploaded-document research
-- [ ] RAG-based document research
-- [ ] Multi-model support
-- [ ] Automated fact verification
-- [ ] Research comparison across multiple topics
-
----
-
 # 📌 Project Status
 
 **Version 1.0 — Completed**
@@ -507,6 +488,4 @@ ResearchMind was built as a hands-on project to explore practical **LLM, multi-a
 
 ---
 
-## ⭐ If You Found This Project Interesting
 
-Feel free to explore the architecture, experiment with the individual agents, and extend the pipeline with additional research, memory, retrieval, or evaluation capabilities.
