@@ -58,7 +58,7 @@ PDF Export
 
 ![Final Report](docs/screenshots/final-report.png)
 
-> **Add your screenshots to:** `docs/screenshots/`
+> Add your screenshots to `docs/screenshots/`.
 
 ---
 
@@ -106,7 +106,7 @@ ResearchMind/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/sidhu2sharp/ResearchMind.git
+git clone https://github.com/Sid1813/ResearchMind.git
 cd ResearchMind
 ```
 
@@ -130,14 +130,14 @@ pip install -r requirements.txt
 
 ### 4. Add API keys
 
-Create a `.env` file:
+Create a `.env` file in the project root:
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
 ```
 
-### 5. Run
+### 5. Run the application
 
 ```bash
 streamlit run app.py
@@ -147,16 +147,25 @@ streamlit run app.py
 
 ## 🎯 Example
 
-Enter:
+Enter a topic such as:
 
 ```text
 Future of Agentic AI
 ```
 
-ResearchMind will automatically create research tasks, collect web evidence, generate a report, and optionally evaluate the report using the Critic Agent.
+ResearchMind will automatically:
+
+1. Create research tasks
+2. Search the web for relevant evidence
+3. Generate research findings
+4. Write a final report
+5. Optionally evaluate the report using the Critic Agent
+6. Export the report as a PDF
 
 ---
 
 ## 👨‍💻 Author
 
-**Sidhu Ranganatha**
+**Siddharth Ranganatha**
+
+GitHub: [@Sid1813](https://github.com/Sid1813)
