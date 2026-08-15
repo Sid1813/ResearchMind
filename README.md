@@ -14,19 +14,19 @@ Built with Python, Google Gemini, Tavily, Streamlit, Pydantic, and ReportLab.
 
 ### Main Interface
 
-![ResearchMind Main Interface](assets/main-interface.png)
+![ResearchMind Main Interface](docs/screenshots/Main%20Interface.png)
 
 The main interface allows users to enter a research topic and generate an end-to-end research report.
 
 ### Research Plan
 
-![Research Plan](assets/research-plan.png)
+![Research Plan](docs/screenshots/Research%20Plan.png)
 
 The Planner Agent breaks the research topic into six focused research tasks.
 
 ### Final Research Report
 
-![Final Research Report](assets/final-research-report.png)
+![Final Research Report](docs/screenshots/Final%20Research%20Report.png)
 
 The Writer Agent synthesizes the collected evidence into a structured research report containing an executive summary, detailed analysis, key takeaways, and conclusion.
 
@@ -112,7 +112,7 @@ For example:
 
 Climate Change
 
-The topic is passed to the ResearchPipeline.
+The topic is passed to the `ResearchPipeline`.
 
 ---
 
@@ -238,10 +238,11 @@ ResearchMind/
 │
 ├── workflows/
 │
-├── assets/
-│   ├── main-interface.png
-│   ├── research-plan.png
-│   └── final-research-report.png
+├── docs/
+│   └── screenshots/
+│       ├── Main Interface.png
+│       ├── Research Plan.png
+│       └── Final Research Report.png
 │
 ├── app.py
 ├── requirements.txt
@@ -374,7 +375,7 @@ LLMs naturally produce text, but applications often need predictable structured 
 
 Pydantic provides a validation layer between the LLM and the rest of the application.
 
-For example, the Planner Agent produces a ResearchPlan containing validated ResearchTask objects.
+For example, the Planner Agent produces a `ResearchPlan` containing validated `ResearchTask` objects.
 
 This makes the downstream pipeline more reliable than relying on free-form text parsing alone.
 
