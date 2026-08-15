@@ -6,25 +6,25 @@ ResearchMind is an AI-powered multi-agent research platform that transforms a br
 
 The system uses specialized AI agents to plan research, retrieve web evidence, synthesize findings, generate a report, optionally critique the result, and export the final report as a PDF.
 
-Built with Python, Google Gemini, Tavily, Streamlit, Pydantic, and ReportLab.
+Built with **Python, Google Gemini, Tavily, Streamlit, Pydantic, and ReportLab**.
 
 ---
 
-## 📸 Demo
+# 📸 Demo
 
-### Main Interface
+## Main Interface
 
 ![ResearchMind Main Interface](docs/screenshots/Main%20Interface.png)
 
 The main interface allows users to enter a research topic and generate an end-to-end research report.
 
-### Research Plan
+## Research Plan
 
 ![Research Plan](docs/screenshots/Research%20Plan.png)
 
 The Planner Agent breaks the research topic into six focused research tasks.
 
-### Final Research Report
+## Final Research Report
 
 ![Final Research Report](docs/screenshots/Final%20Research%20Report.png)
 
@@ -32,7 +32,7 @@ The Writer Agent synthesizes the collected evidence into a structured research r
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - 🧠 **AI Research Planning** — Breaks a broad topic into six focused research tasks.
 - 🔍 **Web Research** — Uses Tavily to retrieve relevant web evidence.
@@ -49,8 +49,9 @@ The Writer Agent synthesizes the collected evidence into a structured research r
 
 # 🏗️ Architecture
 
-ResearchMind uses a modular multi-agent pipeline:
+ResearchMind follows a modular multi-agent architecture:
 
+```text
                          ┌─────────────────┐
                          │   User Topic    │
                          └────────┬────────┘
@@ -91,10 +92,11 @@ ResearchMind uses a modular multi-agent pipeline:
                          │                 │
                          │ PDF Export      │
                          └─────────────────┘
+```
 
-### Current Execution Model
+## Current Execution Model
 
-The current version executes research tasks sequentially.
+The current version executes research tasks **sequentially**.
 
 This was an intentional design choice because Gemini's free-tier request-per-minute limits can be exceeded when multiple research agents make API calls simultaneously.
 
@@ -110,7 +112,9 @@ The user provides a broad research question or topic.
 
 For example:
 
+```text
 Climate Change
+```
 
 The topic is passed to the `ResearchPipeline`.
 
@@ -118,16 +122,18 @@ The topic is passed to the `ResearchPipeline`.
 
 ## 2. Planner Agent
 
-The Planner Agent analyzes the topic and creates six focused research tasks.
+The Planner Agent analyzes the topic and creates exactly six focused research tasks.
 
 For example:
 
-Task 1: Causes of Climate Change  
-Task 2: Environmental Impacts  
-Task 3: Economic and Social Effects  
-Task 4: Mitigation Strategies  
-Task 5: Adaptation Strategies  
+```text
+Task 1: Causes of Climate Change
+Task 2: Environmental Impacts
+Task 3: Economic and Social Effects
+Task 4: Mitigation Strategies
+Task 5: Adaptation Strategies
 Task 6: Future Outlook
+```
 
 The Planner uses a Pydantic schema to ensure the model returns structured task data.
 
@@ -148,13 +154,15 @@ The Research Agent:
 
 The research process follows:
 
-Web Search  
-↓  
-Retrieved Evidence  
-↓  
-Gemini Analysis  
-↓  
+```text
+Web Search
+    ↓
+Retrieved Evidence
+    ↓
+Gemini Analysis
+    ↓
 Research Summary
+```
 
 ---
 
@@ -198,6 +206,7 @@ The completed report can be exported as a downloadable PDF directly from the Str
 
 # 🧩 Project Structure
 
+```text
 ResearchMind/
 │
 ├── agents/
@@ -248,6 +257,7 @@ ResearchMind/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ---
 
@@ -272,8 +282,10 @@ ResearchMind uses environment variables for API credentials.
 
 Create a `.env` file in the project root:
 
+```env
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
+```
 
 The `.env` file is excluded from version control through `.gitignore`.
 
@@ -283,35 +295,47 @@ The `.env` file is excluded from version control through `.gitignore`.
 
 # ⚙️ Installation
 
-## 1. Clone the repository
+## 1. Clone the Repository
 
+```bash
 git clone https://github.com/Sid1813/ResearchMind.git
 cd ResearchMind
+```
 
-## 2. Create a virtual environment
+## 2. Create a Virtual Environment
 
+```bash
 python -m venv venv
+```
 
-## 3. Activate the virtual environment
+## 3. Activate the Virtual Environment
 
 ### Windows
 
+```powershell
 venv\Scripts\activate
+```
 
-## 4. Install dependencies
+## 4. Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-## 5. Configure environment variables
+## 5. Configure Environment Variables
 
-Create a `.env` file:
+Create a `.env` file in the project root:
 
+```env
 GOOGLE_API_KEY=your_google_api_key
 TAVILY_API_KEY=your_tavily_api_key
+```
 
-## 6. Run the application
+## 6. Run the Application
 
+```bash
 streamlit run app.py
+```
 
 The application will open in your browser.
 
@@ -319,33 +343,37 @@ The application will open in your browser.
 
 # 📊 Example Workflow
 
-For the topic:
+For the research topic:
 
+```text
 Climate Change
+```
 
-ResearchMind performs:
+ResearchMind performs the following workflow:
 
+```text
 User Topic
-     ↓
+    ↓
 Planner Agent
-     ↓
+    ↓
 6 Research Tasks
-     ↓
+    ↓
 Tavily Web Search
-     ↓
+    ↓
 Research Evidence
-     ↓
+    ↓
 Research Summaries
-     ↓
+    ↓
 Writer Agent
-     ↓
+    ↓
 Structured Research Report
-     ↓
+    ↓
 Optional Critic Agent
-     ↓
+    ↓
 Quality Evaluation
-     ↓
+    ↓
 PDF Export
+```
 
 ---
 
@@ -357,13 +385,15 @@ A single LLM prompt could generate a research report, but separating the workflo
 
 Each agent has a distinct responsibility:
 
+```text
 Planner  → What should we research?
 
 Research  → What does the retrieved evidence say?
 
-Writer  → How should the evidence be synthesized?
+Writer    → How should the evidence be synthesized?
 
-Critic  → How good is the generated report?
+Critic    → How good is the generated report?
+```
 
 This separation also makes it easier to replace or improve individual components without redesigning the entire application.
 
@@ -389,13 +419,15 @@ Tavily provides external search results that are passed to the Research Agent an
 
 This creates the following flow:
 
+```text
 Search
-↓
+  ↓
 Evidence
-↓
+  ↓
 Analysis
-↓
+  ↓
 Synthesis
+```
 
 ---
 
@@ -457,7 +489,9 @@ Potential future extensions include:
 
 ResearchMind currently supports an end-to-end research workflow:
 
+```text
 Plan → Search → Research → Write → Critique → Export
+```
 
 The application demonstrates how specialized LLM agents can be combined into a modular AI research workflow.
 
