@@ -14,19 +14,19 @@ Built with **Python, Google Gemini, Tavily, Streamlit, Pydantic, and ReportLab**
 
 ## Main Interface
 
-![ResearchMind Main Interface](docs/screenshots/Main%20Interface.png)
+![ResearchMind Main Interface](screenshots/Main%20Interface.png)
 
 The main interface allows users to enter a research topic and generate an end-to-end research report.
 
 ## Research Plan
 
-![Research Plan](docs/screenshots/Research%20Plan.png)
+![Research Plan](screenshots/Research%20Plan.png)
 
 The Planner Agent breaks the research topic into six focused research tasks.
 
 ## Final Research Report
 
-![Final Research Report](docs/screenshots/Final%20Research%20Report.png)
+![Final Research Report](screenshots/Final%20Research%20Report.png)
 
 The Writer Agent synthesizes the collected evidence into a structured research report containing an executive summary, detailed analysis, key takeaways, and conclusion.
 
